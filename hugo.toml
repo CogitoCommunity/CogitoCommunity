@@ -1,4 +1,4 @@
-baseURL = 'https://cogitocommunity.github.io/cogitocommunity/'
+baseURL = 'https://cogitocommunity.github.io/'
 languageCode = 'en-us'
 title = 'CogitoCommunity'
 theme = 'PaperMod'
