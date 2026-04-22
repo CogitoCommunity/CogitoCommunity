@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Our Clubs | CogitoCommunity</title>
+<title>Test Article2 | CogitoCommunity</title>
 <meta name="keywords" content="">
-<meta name="description" content="Explore our student-led clubs: Biology, Philosophy, and Public Speaking">
+<meta name="description" content="Test Article2 - CogitoCommunity">
 <meta name="author" content="CogitoCommunity Team">
-<link rel="canonical" href="http://localhost:1313/clubs/">
+<link rel="canonical" href="http://localhost:1313/articles/test-article2/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bcbe096fa485a548f7f88c376f2749357147829f74aa88c4a84d8399a6b510cb.css" integrity="sha256-vL4Jb6SFpUj3&#43;Iw3bydJNXFHgp90qojEqE2Dmaa1EMs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/clubs/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/clubs/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/test-article2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -36,7 +35,7 @@
 
 </script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
@@ -77,7 +76,7 @@
             </li>
             <li>
                 <a href="http://localhost:1313/clubs/" title="Clubs">
-                    <span class="active">Clubs</span>
+                    <span>Clubs</span>
                 </a>
             </li>
             <li>
@@ -94,18 +93,42 @@
     </nav>
 </header>
 <main class="main">
-<header class="page-header">
-    <h1>Our Clubs</h1>
-    <div class="post-description">
-        Explore our student-led clubs: Biology, Philosophy, and Public Speaking
-    </div>
-</header>
 
-<ul class="terms-tags">
-    <li>
-        <a href="http://localhost:1313/clubs/philosophy-club/">Philosophy Club <sup><strong><sup>1</sup></strong></sup> </a>
-    </li>
-</ul>
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    <a href='http://localhost:1313/'>Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="http://localhost:1313/articles/">Articles</a></nav>
+    <h1 class="post-title entry-hint-parent">
+      Test Article2
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2026-04-22 11:15:30 +0300 EEST'>April 22, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>CogitoCommunity Team</span>
+
+</div>
+  </header> 
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/articles/test-article/">
+    <span class="title">Next »</span>
+    <span>Welcome to CogitoCommunity</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
     </main>
     
 <footer class="footer">
@@ -183,6 +206,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
