@@ -3,7 +3,7 @@ title: "Our Clubs"
 description: "Explore our student-led clubs: Biology, Philosophy, and Public Speaking"
 ---
 
-{{< translate >}}
+{{<translate>}}
 
 # Student Clubs
 
@@ -78,4 +78,4 @@ Each club operates independently, producing original research, articles, and dis
 
 ---
 
-{{< newsletter >}}
+{{<newsletter>}}
