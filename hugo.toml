@@ -4,8 +4,13 @@ title = 'CogitoCommunity'
 theme = 'PaperMod'
 googleAnalytics = "G-299ZRXC3F2"
 
+
+
 [params]
   sticky = true
+
+  ShowSearchPage = true
+
   # Homepage Settings
   [params.profileMode]
     enabled = false
@@ -41,6 +46,9 @@ googleAnalytics = "G-299ZRXC3F2"
   ShowShareButtons = true  # Disable for now, can enable later
 
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 # Main Menu (top navigation)
 [[menu.main]]
   name = "Home"
@@ -67,15 +75,17 @@ googleAnalytics = "G-299ZRXC3F2"
   url = "/submit/"
   weight = 5
 
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 6
+
 # Taxonomies (categories and tags)
 [taxonomies]
   category = "categories"
   tag = "tags"
   club = "clubs"
 
-# Output formats (enables RSS feed)
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
 
 # Markup configuration (for better code highlighting)
 [markup]
