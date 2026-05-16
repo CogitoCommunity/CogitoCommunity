@@ -38,8 +38,6 @@ Average time from submission to publication: **7-10 days**
 
 ---
 
-{{<translate>}}
-
 
 Submit your form [here.](https://forms.gle/dvsE8Cz8QTsfprP17)
 

@@ -3,8 +3,6 @@ title: "About CogitoCommunity"
 description: "Our mission, values, and the team behind the student publication"
 ---
 
-{{<translate>}}
-
 # About CogitoCommunity
 
 ## Our Philosophy

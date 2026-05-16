@@ -4,7 +4,6 @@ description: "Explore our student-led clubs: Biology, Philosophy, and Public Spe
 layout: "list"
 ---
 
-{{<translate>}}
 
 # Student Clubs
 

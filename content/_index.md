@@ -34,5 +34,3 @@ Have a topic you're passionate about? We want to hear from you.
 **[Submit Your Article →](/submit/)** 
 
 ---
-
-{{< translate >}}
