@@ -4,55 +4,49 @@
    Last Updated: May 2026
    ============================================================ */
 
-/* ============================================================
-   # CSS VARIABLES & DESIGN TOKENS
-   Uses PaperMod-compatible variable names for dark mode support
-   ============================================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
 
-:root {
-  /* ===== PaperMod Core Variables (Required for Theme Switching) ===== */
-  --theme: #F0F2ED;              /* Page background */
-  --entry: #FFFFFF;              /* Card backgrounds */
-  --primary: #2E7D32;            /* Forest green - main accent */
-  --content: #1A1A1A;            /* Body text */
-  --secondary: #4A4A4A;          /* Secondary text */
-  --tertiary: #6B6B6B;           /* Muted text */
-  --border: #E0E0E0;             /* Borders */
-  --code-bg: #F5F5F5;            /* Inline code background */
-  
-  /* ===== Brand Color Shades (For Hover States & Variations) ===== */
-  --primary-dark: #144716;       /* Darker green for footer, hover */
-  --primary-light: #2E7D32;      /* Lighter green for accents */
-  --accent: #C9972B;             /* Gold - secondary accent */
-  --accent-dark: #B8862A;        /* Darker gold */
-  --accent-light: #D4A842;       /* Lighter gold */
+/* ============================================================
+   # CSS VARIABLES & DESIGN TOKENS
+   ============================================================ */
 
-    /* Fog - light mode */
-  --fog-1: rgba(46, 125, 50, 0.04);
-  --fog-2: rgba(46, 125, 50, 0.02);
-  --fog-3: rgba(46, 125, 50, 0.03);
+:root {
+  /* ===== PaperMod Core Variables ===== */
+  --theme: #F0F2ED;
+  --entry: #FFFFFF;
+  --primary: #2E7D32;
+  --content: #1A1A1A;
+  --secondary: #4A4A4A;
+  --tertiary: #6B6B6B;
+  --border: #E0E0E0;
+  --code-bg: #F5F5F5;
   
-  /* ===== Spacing Scale (Consistent Rhythm) ===== */
-  --space-xs: 0.5rem;            /* 8px */
-  --space-sm: 1rem;              /* 16px */
-  --space-md: 1.5rem;            /* 24px */
-  --space-lg: 2.5rem;            /* 40px */
-  --space-xl: 4rem;              /* 64px */
+  /* ===== Brand Colors ===== */
+  --primary-dark: #144716;
+  --primary-light: #2E7D32;
+  --accent: #C9972B;
+  --accent-dark: #B8862A;
+  --accent-light: #D4A842;
   
-  /* ===== Border Radius System ===== */
+  /* ===== Spacing ===== */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  
+  /* ===== Border Radius ===== */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
   --radius-xl: 12px;
   
-  /* ===== Shadows (Elevation System) ===== */
+  /* ===== Shadows ===== */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
   
-  /* ===== Transitions (Consistent Timing) ===== */
+  /* ===== Transitions ===== */
   --transition-fast: 0.15s ease;
   --transition-base: 0.2s ease;
   --transition-slow: 0.3s ease;
@@ -63,35 +57,200 @@
    ============================================================ */
 
 body.dark {
-  /* Surfaces */
-  --theme: #1A1D1A;              /* Dark green-black background */
-  --entry: #252925;              /* Card backgrounds - lighter than theme */
+  /* Surfaces - GitHub-inspired palette */
+  --theme: #0D1117;
+  --entry: #161B22;
   
-  /* Brand colors - brightened for dark backgrounds */
-  --primary: #7CB87E;            /* Brighter green for visibility */
-  --primary-dark: #1B5E20;       /* Even brighter for footer */
-  --primary-light: #95C997;
+  /* Brand colors - adjusted for dark backgrounds */
+  --primary: #58A6FF;           /* GitHub blue for links */
+  --primary-dark: #238636;      /* GitHub green for buttons */
+  --primary-light: #66BB6A;
   
-  /* Text colors - inverted */
-  --content: #F0F0F0;            /* Light body text */
-  --secondary: #C0C0C0;          /* Secondary text */
-  --tertiary: #909090;           /* Muted text */
+  /* Text colors - softer whites */
+  --content: #E6EDF3;
+  --secondary: #8B949E;
+  --tertiary: #6E7681;
   
   /* UI elements */
-  --border: #3A3D3A;             /* Subtle borders */
-  --code-bg: #2A2D2A;            /* Code blocks */
+  --border: #30363D;
+  --code-bg: #1C2128;
   
-  /* Accent - brightened */
-  --accent: #E6C14A;             /* Bright gold */
+  /* Accent - warm gold */
+  --accent: #FFD54F;
   --accent-dark: #FFC107;
   --accent-light: #FFEB3B;
-  
-  /* Fog - dark mode (brighter, more visible) */
-  --fog-1: rgba(46, 125, 50, 0.03);  
-  --fog-2: rgba(46, 125, 50, 0.015);
-  --fog-3: rgba(46, 125, 50, 0.02);
 }
 
+/* ===== DARK MODE OVERRIDES (Higher Specificity) ===== */
+
+/* Navigation - Force dark */
+body.dark .nav,
+body.dark header.header,
+body.dark nav {
+  background: rgba(22, 27, 34, 0.98) !important;
+  border-bottom: 1px solid #30363D !important;
+}
+
+body.dark .logo,
+body.dark .logo a {
+  color: #E6EDF3 !important;
+}
+
+body.dark .menu a,
+body.dark nav a,
+body.dark .top-link {
+  color: #8B949E !important;
+}
+
+body.dark .menu a:hover,
+body.dark nav a:hover {
+  color: #4CAF50 !important;
+}
+
+/* Headings - Light gray/white, NOT green */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: #E6EDF3 !important;
+}
+
+/* Exceptions: Hero and section headings can use green */
+body.dark .hero-content h1 {
+  color: #4CAF50 !important;
+}
+
+body.dark .club-feature-card h3,
+body.dark .related-articles h3 {
+  color: #4CAF50 !important;
+}
+
+/* Card titles - readable white */
+body.dark .card-title,
+body.dark .card-title a,
+body.dark .post-title,
+body.dark .post-title a {
+  color: #E6EDF3 !important;
+}
+
+body.dark .card-title a:hover,
+body.dark .post-title a:hover {
+  color: #FFD54F !important;
+}
+
+/* Post content headings */
+body.dark .post-content h1,
+body.dark .post-content h2,
+body.dark .post-content h3,
+body.dark .post-content h4 {
+  color: #E6EDF3 !important;
+}
+
+/* Links - GitHub blue */
+body.dark a {
+  color: #58A6FF !important;
+}
+
+body.dark a:hover {
+  color: #FFD54F !important;
+}
+
+body.dark .post-content a,
+body.dark .entry-content a {
+  color: #58A6FF !important;
+  border-bottom-color: rgba(88, 166, 255, 0.4) !important;
+}
+
+/* Buttons - GitHub green */
+body.dark .button,
+body.dark button,
+body.dark input[type="submit"] {
+  background: #238636 !important;
+  color: #FFFFFF !important;
+}
+
+body.dark .button:hover,
+body.dark button:hover,
+body.dark input[type="submit"]:hover {
+  background: #2EA043 !important;
+}
+
+/* Club badges */
+body.dark .club-badge,
+body.dark .post-meta .club-badge {
+  background: #238636 !important;
+  color: #FFFFFF !important;
+}
+
+body.dark .club-badge-small {
+  color: #FFD54F !important;
+}
+
+/* Tags */
+body.dark .post-tags a,
+body.dark .terms-tags a {
+  background: #21262D !important;
+  color: #E6EDF3 !important;
+  border: 1px solid #30363D !important;
+}
+
+body.dark .post-tags a:hover,
+body.dark .terms-tags a:hover {
+  background: #238636 !important;
+  color: #FFFFFF !important;
+}
+
+/* Footer */
+body.dark .footer {
+  background: #161B22 !important;
+  border-top: 1px solid #30363D !important;
+}
+
+body.dark .footer a {
+  color: #FFD54F !important;
+}
+
+/* Selection */
+body.dark ::selection {
+  background-color: rgba(88, 166, 255, 0.3) !important;
+  color: #E6EDF3 !important;
+}
+
+/* Code blocks */
+body.dark code {
+  color: #E6EDF3 !important;
+  background: #1C2128 !important;
+}
+
+/* Meta text */
+body.dark .breadcrumbs,
+body.dark .post-meta,
+body.dark .article-meta-minimized {
+  color: #8B949E !important;
+}
+
+/* Input focus states */
+body.dark input:focus,
+body.dark textarea:focus,
+body.dark select:focus {
+  border-color: #58A6FF !important;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2) !important;
+}
+
+/* Hero stats borders */
+body.dark .hero-stats {
+  border-top-color: rgba(76, 175, 80, 0.3) !important;
+  border-bottom-color: rgba(76, 175, 80, 0.3) !important;
+}
+
+/* Top link (scroll to top button) */
+body.dark .top-link {
+  background: rgba(22, 27, 34, 0.9) !important;
+  border: 1px solid #30363D !important;
+  color: #E6EDF3 !important;
+}
 
 /* ============================================================
    # BASE TYPOGRAPHY
@@ -104,78 +263,6 @@ body {
   color: var(--content);
   background-color: var(--theme);
   min-height: 100vh;
-  position: relative;
-}
-
-/* Fog layer - separate from body */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: 
-    radial-gradient(ellipse 80% 50% at 50% 20%, var(--fog-color-primary), transparent),
-    radial-gradient(ellipse 60% 40% at 20% 80%, var(--fog-color-secondary), transparent),
-    radial-gradient(ellipse 70% 50% at 80% 60%, var(--fog-color-primary), transparent);
-  background-attachment: fixed;
-  pointer-events: none;
-}
-
-
-
-/* Make HTML element also transparent */
-html {
-  background-color: #FAFBF7;
-}
-
-
-
-
-/* Post entries need background for readability */
-.post-entry {
-  background: var(--entry) !important;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-}
-
-/* Navigation - adapts to theme */
-.nav,
-header.header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-}
-
-body.dark .nav,
-body.dark header.header {
-  background: rgba(26, 29, 26, 0.95);
-  border-bottom: 1px solid var(--border);
-}
-
-body.dark .top-link {
-  background: rgba(37, 41, 37, 0.9);
-  border: 1px solid var(--border);
-}
-
-.footer {
-  background: var(--primary-dark);
-  color: #FFFFFF;              /* Always white text */
-  padding: var(--space-lg) 0;
-  margin-top: var(--space-xl);
-  text-align: center;
-}
-
-.footer a {
-  color: var(--accent-light);
-  border-bottom: 1px solid transparent;
-}
-
-.footer a:hover {
-  color: #FFFFFF;
-  border-bottom-color: #FFFFFF;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -185,28 +272,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-dark);
 }
 
-h1 {
-  font-size: 2.5rem;            /* 40px */
-  margin-bottom: var(--space-md);
-}
+h1 { font-size: 2.5rem; margin-bottom: var(--space-md); }
+h2 { font-size: 2rem; margin-top: var(--space-lg); margin-bottom: var(--space-sm); }
+h3 { font-size: 1.5rem; margin-top: var(--space-md); margin-bottom: var(--space-sm); }
+h4 { font-size: 1.25rem; }
 
-h2 {
-  font-size: 2rem;              /* 32px */
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-sm);
-}
-
-h3 {
-  font-size: 1.5rem;            /* 24px */
-  margin-top: var(--space-md);
-  margin-bottom: var(--space-sm);
-}
-
-h4 {
-  font-size: 1.25rem;           /* 20px */
-}
-
-/* Selection color (when user highlights text) */
 ::selection {
   background-color: rgba(201, 151, 43, 0.2);
   color: var(--content);
@@ -215,6 +285,13 @@ h4 {
 /* ============================================================
    # HEADER & NAVIGATION
    ============================================================ */
+
+.nav,
+header.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
 
 .top-link,
 .nav a {
@@ -232,7 +309,6 @@ h4 {
   padding: var(--space-xs) var(--space-sm);
 }
 
-/* Active page indicator (underline) */
 .nav a.active::after {
   content: '';
   position: absolute;
@@ -252,11 +328,9 @@ h4 {
 }
 
 /* ============================================================
-   # HOMEPAGE LAYOUTS
-   Floating decorative icons + stats + club feature cards
+   # HOMEPAGE HERO
    ============================================================ */
 
-/* Hero Section with Floating Icons */
 .homepage-hero-compact {
   position: relative;
   min-height: 100vh;
@@ -264,7 +338,7 @@ h4 {
   align-items: center;
   justify-content: center;
   padding: var(--space-xl) var(--space-md);
-  z-index: 1;                           /* Above floating icons */
+  z-index: 1;
 }
 
 .floating-background-icons {
@@ -273,15 +347,14 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;                           /* Behind all content */
-  pointer-events: none;                 /* Don't block clicks */
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Floating decorative icons (DNA, philosopher bust, podium, etc.) */
 .hero-icon {
   position: absolute;
-  opacity: 0.12;                 /* Subtle, behind text */
-  pointer-events: none;          /* Don't interfere with clicks */
+  opacity: 0.12;
+  pointer-events: none;
   z-index: 0;
   filter: blur(2px);
 }
@@ -317,8 +390,6 @@ h4 {
   height: 210px;
 }
 
-
-/* Hero text content (stays above floating icons) */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -326,13 +397,12 @@ h4 {
   text-align: center;
 }
 
-/* Typography improvements */
 .hero-content h1 {
   font-size: 3.5rem;
   margin-top: -7rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  letter-spacing: -0.02em;              /* Tighter tracking for impact */
+  letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--primary-dark);
 }
@@ -346,7 +416,6 @@ h4 {
   letter-spacing: 0.01em;
 }
 
-/* First subtitle = "Pursuit of Truth" tagline */
 .hero-subtitle:first-of-type {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -355,7 +424,6 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
-/* Stats bar (3 Clubs | 12 Articles | Bilingual) */
 .hero-stats {
   display: flex;
   justify-content: center;
@@ -381,31 +449,16 @@ h4 {
 }
 
 /* ============================================================
-   CONTENT SECTIONS - SOLID BACKGROUNDS
-   Prevents floating icons from bleeding through
+   # CLUB FEATURE CARDS
    ============================================================ */
 
-.clubs-feature-grid,
-.featured-section-container,
-.article-grid-container,
-.newslettter {
-  position: relative;
-  z-index: 1;
-  background: transparent;
-  padding: var(--space-md) 0;
-}
-
-.clubs-feature-grid {
-  padding: var(--space-lg) var(--space-md);
-}
-
-/* Club Feature Cards (3-column grid below hero) */
 .clubs-feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-md);
   margin-bottom: var(--space-xl);
+  padding: var(--space-lg) var(--space-md);
 }
 
 .club-feature-card {
@@ -426,7 +479,7 @@ h4 {
 }
 
 .club-icon {
-  font-size: 3rem;              /* Large emoji/icon */
+  font-size: 3rem;
   margin-bottom: var(--space-sm);
 }
 
@@ -449,9 +502,11 @@ h4 {
   padding: 0.6rem 1.2rem;
 }
 
-/* Featured Article Section */
+/* ============================================================
+   # FEATURED ARTICLE
+   ============================================================ */
+
 .featured-section-container {
-  background-color: var(--entry);
   max-width: 1000px;
   margin: var(--space-lg) auto;
   padding: 0 var(--space-md);
@@ -477,15 +532,11 @@ h4 {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  object-position: center;
   display: block;
 }
 
 .featured-content {
   padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: var(--entry);
 }
 
@@ -518,7 +569,10 @@ h4 {
   color: var(--accent);
 }
 
-/* Article Grid (3 columns) */
+/* ============================================================
+   # ARTICLE GRID
+   ============================================================ */
+
 .article-grid-container {
   margin: var(--space-xl) 0;
 }
@@ -581,22 +635,13 @@ h4 {
   border-bottom: none;
 }
 
-body.dark .footer {
-  background: #2E7D32;
-  color: #FFFFFF;
-}
-
-body.dark .footer a {
-  color: #FFD54F;
-}
-
 /* ============================================================
-   # ARTICLE COMPONENTS
-   List view cards & single article pages
+   # POST ENTRIES & SINGLE ARTICLES
    ============================================================ */
 
-/* Article Cards (List View - /articles/ page) */
 .post-entry {
+  background: var(--entry) !important;
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-base), 
@@ -610,7 +655,6 @@ body.dark .footer a {
   border-color: var(--primary-light);
 }
 
-/* Single Article Page */
 .post-single {
   background: var(--entry);
   border-radius: var(--radius-lg);
@@ -640,7 +684,10 @@ body.dark .footer a {
   margin-bottom: var(--space-md);
 }
 
-/* Related Articles Section (Bottom of Single Article) */
+/* ============================================================
+   # RELATED ARTICLES
+   ============================================================ */
+
 .related-articles {
   margin-top: 3rem;
   padding-top: 2rem;
@@ -694,11 +741,9 @@ body.dark .footer a {
 }
 
 /* ============================================================
-   # INTERACTIVE ELEMENTS
-   Links, buttons, badges, tags
+   # LINKS & BUTTONS
    ============================================================ */
 
-/* Links */
 a {
   color: var(--primary);
   text-decoration: none;
@@ -722,7 +767,6 @@ a:hover {
   border-bottom-color: var(--accent);
 }
 
-/* Buttons */
 .button,
 button,
 input[type="submit"] {
@@ -763,7 +807,10 @@ input[type="submit"]:hover {
   flex-wrap: wrap;
 }
 
-/* Club Badges */
+/* ============================================================
+   # BADGES & TAGS
+   ============================================================ */
+
 .post-meta .club-badge,
 .clubs-list .club-badge {
   display: inline-block;
@@ -791,7 +838,6 @@ input[type="submit"]:hover {
   letter-spacing: 0.05em;
 }
 
-/* Tags */
 .post-tags a,
 .terms-tags a {
   background: var(--accent-light);
@@ -815,11 +861,9 @@ input[type="submit"]:hover {
 }
 
 /* ============================================================
-   # FORMS & NEWSLETTER
-   Input fields, MailerLite overrides,
+   # FORMS & INPUTS
    ============================================================ */
 
-/* Form Inputs */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -850,13 +894,7 @@ label {
   color: var(--content);
 }
 
-/* Newsletter Signup (General Wrapper) */
-.newsletter-signup,
-.newslettter {
-  margin: var(--space-xl) 0;
-}
-
-/* MailerLite Form Overrides (What Actually Works) */
+/* MailerLite Newsletter Overrides */
 #mlb2-40204861 .ml-form-embedWrapper {
   background: linear-gradient(135deg, var(--entry) 0%, var(--theme) 100%) !important;
   border-left: 6px solid var(--accent) !important;
@@ -873,24 +911,10 @@ label {
   border-color: var(--accent) !important;
 }
 
-body {
-  top: 0px !important;
-}
-
-.goog-logo-link {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  color: transparent !important;
-}
-
 /* ============================================================
    # CONTENT FORMATTING
-   Blockquotes, code blocks, tables
    ============================================================ */
 
-/* Blockquotes */
 blockquote {
   border-left: 4px solid var(--accent);
   background: var(--theme);
@@ -905,7 +929,6 @@ blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* Code Blocks */
 .highlight {
   border-left: 3px solid var(--primary);
   border-radius: var(--radius-sm);
@@ -925,7 +948,6 @@ pre code {
   padding: 0;
 }
 
-/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -957,8 +979,7 @@ tr:hover {
 }
 
 /* ============================================================
-   # TAXONOMY & ARCHIVE PAGES
-   Category/tag listings, archive dates
+   # TAXONOMY & ARCHIVE
    ============================================================ */
 
 .archive-month {
@@ -972,7 +993,6 @@ tr:hover {
 
 /* ============================================================
    # SEARCH
-   Search result cards
    ============================================================ */
 
 #searchResults {
@@ -999,7 +1019,7 @@ tr:hover {
 
 .footer {
   background: var(--primary-dark);
-  color: var(--theme);
+  color: #FFFFFF;
   padding: var(--space-lg) 0;
   margin-top: var(--space-xl);
   text-align: center;
@@ -1058,7 +1078,7 @@ tr:hover {
 }
 
 /* ============================================================
-   # RESPONSIVE DESIGN - TABLET (≤1024px)
+   # RESPONSIVE - TABLET (≤1024px)
    ============================================================ */
 
 @media screen and (max-width: 1024px) {
@@ -1066,47 +1086,32 @@ tr:hover {
   h2 { font-size: 1.875rem; }
   h3 { font-size: 1.375rem; }
   
-  .post-single {
-    padding: var(--space-md);
-  }
+  .post-single { padding: var(--space-md); }
   
-  /* Article grid: 3 columns → 2 columns */
-  .article-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Related articles: 3 columns → 2 columns */
-  .related-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Club cards: 3 columns → 2 columns */
+  .article-grid,
+  .related-grid,
   .clubs-feature-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* ============================================================
-   # RESPONSIVE DESIGN - MOBILE (≤768px)
+   # RESPONSIVE - MOBILE (≤768px)
    ============================================================ */
 
 @media screen and (max-width: 768px) {
-  body {
-    font-size: 1rem;
-  }
+  body { font-size: 1rem; }
   
   h1 { font-size: 2rem; }
   h2 { font-size: 1.625rem; }
   h3 { font-size: 1.25rem; }
   
-  /* Single column layouts */
   .article-grid,
   .related-grid,
   .clubs-feature-grid {
     grid-template-columns: 1fr;
   }
   
-  /* Featured card: image on top */
   .featured-card-large {
     grid-template-columns: 1fr;
   }
@@ -1124,13 +1129,11 @@ tr:hover {
     font-size: 1rem;
   }
   
-  /* Hero stats: stack vertically */
   .hero-stats {
     flex-direction: column;
     gap: var(--space-sm);
   }
   
-  /* Hero buttons: stack vertically */
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -1141,7 +1144,6 @@ tr:hover {
     max-width: 300px;
   }
   
-  /* Hide floating icons on mobile (too cluttered) */
   .hero-icon {
     display: none;
   }
@@ -1158,7 +1160,6 @@ tr:hover {
     padding: var(--space-sm);
   }
   
-  /* Touch-friendly tap targets (min 44px) */
   button,
   .button,
   .nav a {
@@ -1170,7 +1171,7 @@ tr:hover {
 }
 
 /* ============================================================
-   # RESPONSIVE DESIGN - SMALL MOBILE (≤480px)
+   # RESPONSIVE - SMALL MOBILE (≤480px)
    ============================================================ */
 
 @media screen and (max-width: 480px) {
@@ -1201,28 +1202,4 @@ tr:hover {
   display: flex; 
   justify-content: center; 
   align-items: center; 
-}
-
-/* ============================================================
-   # FUTURE FEATURES (Currently Disabled)
-   ============================================================ */
-
-/* Print Styles - Activate when needed */
-@media print {
-  body {
-    background: white;
-    color: black;
-    font-size: 12pt;
-  }
-  
-  .nav,
-  .footer,
-  .newsletter-signup {
-    display: none;
-  }
-  
-  a {
-    color: black;
-    text-decoration: underline;
-  }
 }
